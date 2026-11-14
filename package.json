@@ -1,0 +1,20 @@
+{
+  "name": "bbsv-portal",
+  "version": "1.0.0",
+  "description": "High-fidelity replica of BBSV Ltd portal reverse-engineered using REA methodologies",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "bbsvltd",
+    "reverse-engineering",
+    "rea",
+    "clean-room-rebuild",
+    "portal"
+  ],
+  "author": "Venugopal",
+  "license": "MIT"
+}
