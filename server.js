@@ -90,7 +90,7 @@ const server = http.createServer((req, res) => {
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
   console.log(`\n======================================================`);
-  console.log(` BBSV Ltd Portal Replica Server is running!`);
+  console.log(` ASVV Ltd Portal Replica Server is running!`);
   console.log(` URL: http://localhost:${PORT}`);
   console.log(` Serving files from: ${PUBLIC_DIR}`);
   console.log(`======================================================\n`);

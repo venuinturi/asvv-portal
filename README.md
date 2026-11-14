@@ -1,6 +1,6 @@
-# BBSV Ltd Portal Replica
+# ASVV Ltd Portal Replica
 
-A high-fidelity, clean-room replica of the [BBSV Ltd](https://bbsvltd.com/) digital portal, reverse-engineered and reconstructed following the principles documented in [AIshihzong/awesome-reverse-engineer-anything](https://github.com/AIshihzong/awesome-reverse-engineer-anything.git).
+A high-fidelity, clean-room replica of the [ASVV Ltd](https://bbsvltd.com/) digital portal, reverse-engineered and reconstructed following the principles documented in [AIshihzong/awesome-reverse-engineer-anything](https://github.com/AIshihzong/awesome-reverse-engineer-anything.git).
 
 ---
 
@@ -79,7 +79,7 @@ bbsv-portal/
 │   │   ├── site.DiH8E0mQ.js
 │   │   └── navigation.BmdBpfkP.js
 │   ├── media/                               # Visual assets, branding & animations
-│   │   ├── bbsv-logo.png
+│   │   ├── asvv-logo.png
 │   │   ├── collaboration-illustration.webp
 │   │   ├── service-1.webp ... service-6.webp
 │   │   ├── client-preview-1.webp ... 5.webp
@@ -97,6 +97,6 @@ bbsv-portal/
 ---
 
 ## 🛡️ License & Attribution
-* **Original Portal**: [BBSV Ltd](https://bbsvltd.com/)
+* **Original Portal**: [ASVV Ltd](https://bbsvltd.com/)
 * **Methodology**: Inspired by the [awesome-reverse-engineer-anything](https://github.com/AIshihzong/awesome-reverse-engineer-anything.git) catalog.
 * **Code Rebuild**: MIT License.
