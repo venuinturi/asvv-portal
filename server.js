@@ -31,6 +31,13 @@ const server = http.createServer((req, res) => {
   const urlObj = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   let pathname = decodeURIComponent(urlObj.pathname);
 
+  // Strip GitHub Pages prefix if present so local testing supports both
+  if (pathname.startsWith('/bbsv-portal/')) {
+    pathname = pathname.slice('/bbsv-portal'.length);
+  } else if (pathname === '/bbsv-portal') {
+    pathname = '/';
+  }
+
   // Normalize safe path
   let safePath = path.normalize(path.join(PUBLIC_DIR, pathname));
   if (!safePath.startsWith(PUBLIC_DIR)) {
@@ -39,7 +46,6 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // Check if safePath is directory or file
   try {
     let stat = fs.existsSync(safePath) ? fs.statSync(safePath) : null;
 
@@ -48,7 +54,6 @@ const server = http.createServer((req, res) => {
       stat = fs.existsSync(safePath) ? fs.statSync(safePath) : null;
     }
 
-    // Clean URL fallback: e.g. /about -> /about.html or /about/index.html
     if (!stat) {
       if (fs.existsSync(safePath + '.html')) {
         safePath = safePath + '.html';

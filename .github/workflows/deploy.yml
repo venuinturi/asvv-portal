@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare paths for GitHub Pages subpath
+        run: |
+          find public -name "*.html" -type f -exec sed -i 's|href="/_astro/|href="/bbsv-portal/_astro/|g' {} +
+          find public -name "*.html" -type f -exec sed -i 's|src="/_astro/|src="/bbsv-portal/_astro/|g' {} +
+          find public -name "*.html" -type f -exec sed -i 's|src="/media/|src="/bbsv-portal/media/|g' {} +
+          find public -name "*.html" -type f -exec sed -i 's|href="/media/|href="/bbsv-portal/media/|g' {} +
+          find public -name "*.html" -type f -exec sed -i 's|href="/favicon|href="/bbsv-portal/favicon|g' {} +
+          find public -name "*.html" -type f -exec sed -i 's|href="/apple-touch-icon|href="/bbsv-portal/apple-touch-icon|g' {} +
+          find public -name "*.html" -type f -exec sed -i 's|href="/services|href="/bbsv-portal/services|g' {} +
+          find public -name "*.html" -type f -exec sed -i 's|href="/about|href="/bbsv-portal/about|g' {} +
+          find public -name "*.html" -type f -exec sed -i 's|href="/contact|href="/bbsv-portal/contact|g' {} +
+          find public -name "*.html" -type f -exec sed -i 's|href="/#|href="/bbsv-portal/#|g' {} +
+          find public -name "*.html" -type f -exec sed -i 's|href="/"|href="/bbsv-portal/"|g' {} +
+          sed -i 's|/media/dotlottie-player|/bbsv-portal/media/dotlottie-player|g' public/_astro/site.DiH8E0mQ.js
+          sed -i 's|/media/tech-andre-alves.lottie|/bbsv-portal/media/tech-andre-alves.lottie|g' public/_astro/site.DiH8E0mQ.js
+          cp public/index.html public/404.html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
