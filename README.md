@@ -40,7 +40,7 @@ This project is packaged with a zero-dependency, ultra-fast Node.js HTTP server 
 
 1. Navigate to the project directory:
    ```bash
-   cd /Users/venugopal/bbsv-portal
+   cd /Users/venugopal/asvv-portal
    ```
 
 2. Start the local server:
@@ -61,7 +61,7 @@ This project is packaged with a zero-dependency, ultra-fast Node.js HTTP server 
 ## 📁 Project Structure
 
 ```
-bbsv-portal/
+asvv-portal/
 ├── public/
 │   ├── index.html                           # Home page
 │   ├── about/index.html                     # About us page

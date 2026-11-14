@@ -1,5 +1,5 @@
 {
-  "name": "bbsv-portal",
+  "name": "asvv-portal",
   "version": "1.0.0",
   "description": "High-fidelity replica of ASVV Ltd portal reverse-engineered using REA methodologies",
   "main": "server.js",

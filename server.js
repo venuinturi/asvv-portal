@@ -32,9 +32,9 @@ const server = http.createServer((req, res) => {
   let pathname = decodeURIComponent(urlObj.pathname);
 
   // Strip GitHub Pages prefix if present so local testing supports both
-  if (pathname.startsWith('/bbsv-portal/')) {
-    pathname = pathname.slice('/bbsv-portal'.length);
-  } else if (pathname === '/bbsv-portal') {
+  if (pathname.startsWith('/asvv-portal/')) {
+    pathname = pathname.slice('/asvv-portal'.length);
+  } else if (pathname === '/asvv-portal') {
     pathname = '/';
   }
 
